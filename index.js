@@ -19,7 +19,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/times', (req, res) => res.send(showTimes()))
-app.get('/', (req, res) => {
+  .get('/', (req, res) => {
   res.send('Hello World Paola Correa G!')
 })
   .get('/db', async (req, res) => {
@@ -42,8 +42,6 @@ showTimes = () => {
   for (i = 0; i < times; i++) {
     result += i + ' ';
   }
-  app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
 })
   return result;
 }
