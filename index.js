@@ -5,11 +5,11 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-const cool = require('cool-ascii-faces', "Paola Correa");
+const cool = require('cool-ascii-faces');
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const app = require("express")();
+
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -39,6 +39,3 @@ showTimes = () => {
   }
   return result;
 }
-app.get("", (req,res)>=>{ res.send("Paola Correa");});
-app.listen(PORT, () => {
-  console.log('App up at port ${PORT}'); });
