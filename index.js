@@ -7,6 +7,7 @@ const pool = new Pool({
 });
 const cool = require('cool-ascii-faces');
 const express = require('express')
+const app = express()
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
@@ -18,6 +19,9 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/times', (req, res) => res.send(showTimes()))
+app.get('/', (req, res) => {
+  res.send('Hello World Paola Correa G!')
+})
   .get('/db', async (req, res) => {
     try {
       const client = await pool.connect();
@@ -38,6 +42,10 @@ showTimes = () => {
   for (i = 0; i < times; i++) {
     result += i + ' ';
   }
+  app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
   return result;
 }
-Paola Correa
+
+
